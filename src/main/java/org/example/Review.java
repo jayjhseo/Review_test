@@ -10,7 +10,7 @@ public class Review {
     private long id;
     //리뷰 id(고유번호)
 
-    private int reservation_id;
+    private int reservationId;
     //예매정보id
 
     private int score;
@@ -19,10 +19,5 @@ public class Review {
     private String writing;
     //글(한줄평)
 
-    public Review(long id, int score, String writing) {
-        this.id = id;
-        this.score = score;
-        this.writing = writing;
-    }
 
 }
