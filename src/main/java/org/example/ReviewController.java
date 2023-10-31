@@ -50,6 +50,8 @@ public class ReviewController {
                 // 로그인한 멤버가 자기 자신이 작성한 리뷰를 수정할수 있어야함
                 // 수정이나 삭제 할 리뷰내용은 loginedMember가 일단 null값이 아닌경우에 가능
                 // 또한 수정이나 삭제할시 loginedMember가 저장한 값을 수정이나 삭제가 가능하게 만들어야함
+                // loginedMember == null -> 로그인 후 이용해달라
+                // loginedMember == member(해당 리뷰를 작성한 유저) 삭제와 수정이 가능
                 System.out.println("수정할 리뷰내용의 ID값을 입력해주세요");
                 long id = Long.parseLong(Container.getSc().nextLine());
                 boolean checkId = false;
