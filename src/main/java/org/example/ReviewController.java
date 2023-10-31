@@ -52,6 +52,7 @@ public class ReviewController {
                 // 또한 수정이나 삭제할시 loginedMember가 저장한 값을 수정이나 삭제가 가능하게 만들어야함
                 // loginedMember == null -> 로그인 후 이용해달라
                 // loginedMember == member(해당 리뷰를 작성한 유저) 삭제와 수정이 가능
+                // 명언앱이나 텍스트앱은 로그인만 되면 그 어떠한 명언이나 텍스트를 삭제할 수 있었다.
                 System.out.println("수정할 리뷰내용의 ID값을 입력해주세요");
                 long id = Long.parseLong(Container.getSc().nextLine());
                 boolean checkId = false;
