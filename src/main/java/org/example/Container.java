@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.Scanner;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -16,7 +17,8 @@ public class Container {
     public static void init() {
         sc = new Scanner(System.in);
     }
-    public static void close(){
+
+    public static void close() {
         sc.close();
     }
 
