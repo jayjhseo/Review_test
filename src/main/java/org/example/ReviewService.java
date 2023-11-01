@@ -4,35 +4,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ReviewService {
-    List<Review> reviewList = new ArrayList<>();
-    int id = 0;
+    ReviewRepository reviewRepository = new ReviewRepository();
 
-    public int create(int score, String writing) {
-        id++;
-        Review review = new Review(score, writing);  //db에서 불러온 reservationId값이 리뷰 리스트에 저장된다.
-        reviewList.add(review);
-
-        return id;
+    public int create(int reservationId, int score, String writing) {
+        return this.reviewRepository.create(reservationId, score, writing);
     }
 
     public List<Review> getReviewAllList() {
-        return reviewList;
+        return this.reviewRepository.getReviewAllList();
     }
 
     public void remove(Review review) {
-        reviewList.remove(review);
+        this.reviewRepository.remove(review);
     }
     public void modify(Review review, int score, String writing) {
-        review.setScore(score);
-        review.setWriting(writing);
+        reviewRepository.modify(review, score, writing);
     }
-    public Review getListById(int id) {
-        for (int i = 0; i < reviewList.size(); i++) {
-            Review review = reviewList.get(i);
-            if (review.getId() == id) {
-                return review;
-            }
-        }
-        return null;
+    public Review getReviewListById(int id) {
+        return this.reviewRepository.getReviewListById(id);
     }
 }
